@@ -1,0 +1,7 @@
+<div class="container mt-5">
+    <div class="d-flex justify-content-between">
+        <a [routerLink]="['/home']"> < Go back to shopping</a>
+    <a [routerLink]="['/buyItem']" *ngIf="userCartDataGet?.length > 0">Buy now</a>
+    </div>
+    <app-card [resData]="userCartDataGet" [cartComponent]="'hide'"></app-card>
+  </div>

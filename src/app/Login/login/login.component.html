@@ -1,0 +1,27 @@
+<h1 class="text-center mt-5">Login Form</h1>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-6 mt-5">
+            <form [formGroup]="form" (ngSubmit)="loginForm()">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" formControlName="email" id="email" aria-describedby="emailHelp">
+                  <div *ngIf="f.email.touched && f.email.errors?.required" class="form-text">
+                    Email is required.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" formControlName="passCode" id="passCode">
+                  <div *ngIf="f.passCode.touched && f.passCode.errors?.required" class="form-text">
+                    Passowrd is required.
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mt-5">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <button class="btn btn-secondary" (click)="loginToRegist()">Register</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
